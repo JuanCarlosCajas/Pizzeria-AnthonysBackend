@@ -2,6 +2,7 @@ package com.Pizzeria.AnthonyBackend.Controller;
 
 import com.Pizzeria.AnthonyBackend.Modals.Producto;
 import com.Pizzeria.AnthonyBackend.Services.ProductoService;
+import com.github.cliftonlabs.json_simple.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,5 +38,12 @@ public class ProductoController {
     @RequestMapping(value = "api/producto/{id}", method = RequestMethod.PATCH)
     public String actualizarProducto (@RequestBody Producto producto, @PathVariable int id) {
         return productoService.actualizarProducto(producto, id);
+    }
+    
+    @RequestMapping(value = "api/contador/producto",method = RequestMethod.GET)
+    public JsonObject contadorProducto () {
+        JsonObject n_productos = new JsonObject();
+        n_productos.put("productos", productoService.contadorProducto());
+        return n_productos;
     }
 }

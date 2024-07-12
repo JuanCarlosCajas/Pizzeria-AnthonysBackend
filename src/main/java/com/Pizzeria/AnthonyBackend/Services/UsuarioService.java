@@ -25,4 +25,8 @@ public class UsuarioService {
         usuarioRepository.save(usuario);
         return usuario;
     }
+
+    public long contadorUsuarios (){
+        return usuarioRepository.count();
+    }
 }

@@ -1,4 +1,11 @@
+
+fetch("http://localhost:8080/api/contador/usuario")
+    .then(response => response.json())
+    .then(data => console.log(data))
+
 $(document).ready(function(){
+
+    /* Fetchs usuarios */
 
 	/*  Show/Hidden Submenus */
 	$('.nav-btn-submenu').on('click', function(e){

@@ -63,4 +63,8 @@ public class ProductoService {
     public void ingresarProducto(@NotNull Producto producto){
         productoRepository.save(producto);
     }
+
+    public long contadorProducto(){
+        return productoRepository.count();
+    }
 }
