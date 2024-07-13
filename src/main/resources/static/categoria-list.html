@@ -177,34 +177,61 @@
                         <th>ELIMINAR </th>
                     </tr>
                     </thead>
-                    <tbody id="categoria">
-                    <tr class="text-center" >
-                        <td>1</td>
-                        <td>1</td>
-                        <td>PIZZA</td>
-                        <td>
-                            <a href="categoria-update.html" class="btn btn-success">
-                                <i class="fas fa-sync-alt"></i>
-                            </a>
-                        </td>
-                        <td>
-                            <form action="">
-                                <button type="button" class="btn btn-warning">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
+                    <tbody id="categoria-table-body">
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
 
-
-
-
 </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Documento cargado'); // Verificación de carga del documento
+
+        fetch('http://localhost:8080/api/categoria')
+            .then(response => {
+                console.log('Respuesta de la API:', response); // Verificación de la respuesta de la API
+                if (!response.ok) {
+                    throw new Error('Error en la respuesta de la API');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Datos obtenidos:', data); // Verificación de los datos obtenidos
+                const tableBody = document.getElementById('categoria-table-body');
+                if (!Array.isArray(data)) {
+                    console.error('Los datos obtenidos no son un array:', data);
+                    return;
+                }
+                data.forEach((categoria, index) => {
+                    const row = document.createElement('tr');
+                    row.className = 'text-center';
+
+                    row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${categoria.id_categoria}</td>
+                    <td>${categoria.nombre_categoria}</td>
+                    <td>
+                        <a href="categoria-update.html?id=${categoria.id_categoria}" class="btn btn-success">
+                            <i class="fas fa-sync-alt"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <button class="btn btn-warning" onclick="eliminarCategoria(${categoria.id_categoria})">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </td>
+                `;
+
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error al obtener las categorías:', error));
+    });
+
+</script>
 
 
 

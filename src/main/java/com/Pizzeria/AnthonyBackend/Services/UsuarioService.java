@@ -30,3 +30,4 @@ public class UsuarioService {
         return usuarioRepository.count();
     }
 }
+

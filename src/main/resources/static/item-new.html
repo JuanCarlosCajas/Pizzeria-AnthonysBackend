@@ -219,17 +219,12 @@
                                         <input type="num" pattern="[0-9]{1,9}" class="form-control" name="item_stock" id="item_stock" maxlength="9">
                                     </div>
                                 </div>
-								<div class="col-12 col-md-4">
-									<div class="form-group">
-										<label for="item_categoria" class="bmd-label-floating">Categoria</label>
-										<select class="form-control" name="item_categoria" id="item_categoria">
-											<option value="habilitado" selected="" disabled="">Seleccione una opción</option>
-											<option value="Deshabilitado">Pizza</option>
-											<option value="Deshabilitado">Pastas</option>
-                                            <option value="Deshabilitado">Complemento</option>
-										</select>
-									</div>
-								</div>
+                                <div class="col-12 col-md-4">
+                                    <div class="item_categoria">
+                                        <label for="item_codigo" class="bmd-label-floating">ID Categoria</label>
+                                        <input type="text" pattern="[a-zA-Z0-9-]{1,45}" class="form-control" name="item_categoria" id="item_categoria" maxlength="45">
+                                    </div>
+                                </div>
 							</div>
 						</div>
 					</fieldset>

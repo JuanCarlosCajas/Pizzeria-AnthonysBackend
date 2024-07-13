@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-/*@CrossOrigin(origins = "http://localhost:4200/")*/
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200/")
+
 public class ProductoController {
 
     @Autowired
@@ -37,7 +37,7 @@ public class ProductoController {
     }
 
     @RequestMapping(value = "api/producto", method = RequestMethod.POST)
-    public void ingresarProducto (@RequestBody Producto producto) {
+    public void ingresarProducto(@RequestBody Producto producto) {
         productoService.ingresarProducto(producto);
     }
 

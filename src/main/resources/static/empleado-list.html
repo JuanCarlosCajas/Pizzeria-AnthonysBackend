@@ -179,7 +179,7 @@
                         <th>ELIMINAR</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody  id="empleados-table-body">
                     <tr class="text-center" >
                         <td>1</td>
                         <th>123</th>
@@ -206,7 +206,47 @@
 
     </section>
 </main>
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('http://localhost:8080/api/empleados')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la respuesta de la API');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const tableBody = document.getElementById('empleados-table-body');
+                if (!Array.isArray(data)) {
+                    console.error('Los datos obtenidos no son un array:', data);
+                    return;
+                }
+                data.forEach((empleado, index) => {
+                    const row = document.createElement('tr');
+                    row.className = 'text-center';
+                    row.innerHTML = `
+                        <td>${index + 1}</td>
+                        <td>${empleado.id_empleado}</td>
+                        <td>${empleado.usuario}</td>
+                        <td>${empleado.contrasena}</td>
+                        <td>${empleado.role_empleado}</td>
+                        <td>
+                            <a href="empleado-update.html?id=${empleado.id_empleado}" class="btn btn-success">
+                                <i class="fas fa-sync-alt"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning" onclick="eliminarEmpleado(${empleado.id_empleado})">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error al obtener los empleados:', error));
+    });
+</script>
 
 <!--=============================================
 =            JavaScript files                  =

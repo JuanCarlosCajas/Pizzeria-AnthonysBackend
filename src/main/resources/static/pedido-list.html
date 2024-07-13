@@ -184,36 +184,57 @@
                         <th>Eliminar</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr class="text-center" >
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>150</td>
-                        <td>hoy</td>
-                        <td>Mi casa</td>
-                        <td>en proceso</td>
-                        <td>
-                            <a href="pedido-update.html" class="btn btn-success">
-                                <i class="fas fa-sync-alt"></i>
-                            </a>
-                        </td>
-                        <td>
-                            <form action="">
-                                <button type="button" class="btn btn-warning">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
+                    <tbody id="pedido-table-body">
+
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('http://localhost:8080/api/pedido')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error en la respuesta de la API');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const tableBody = document.getElementById('pedido-table-body');
+                    data.forEach((pedido, index) => {
+                        const row = document.createElement('tr');
+                        row.className = 'text-center';
 
+                        row.innerHTML = `
+                            <td>${index + 1}</td>
+                            <td>${pedido.id_pedido}</td>
+                            <td>${pedido.usuario}</td>
+                            <td>${pedido.metodoPago}</td>
+                            <td>${pedido.fecha_pedido}</td>
+                            <td>${pedido.total}</td>
+                            <td>${pedido.direccion}</td>
+                            <td>${pedido.estado}</td>
+                            <td>
+                                <a href="pedido-update.html?id=${pedido.id_pedido}" class="btn btn-success">
+                                    <i class="fas fa-sync-alt"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <button class="btn btn-warning" onclick="eliminarPedido(${pedido.id_pedido})">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        `;
+
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error al obtener los pedidos:', error));
+        });
+
+    </script>
 
 
 </main>
