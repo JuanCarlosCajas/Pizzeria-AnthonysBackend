@@ -1,5 +1,6 @@
 package com.Pizzeria.AnthonyBackend.Controller;
 
+import com.Pizzeria.AnthonyBackend.Dao.ProductosDao;
 import com.Pizzeria.AnthonyBackend.Modals.Producto;
 import com.Pizzeria.AnthonyBackend.Services.ProductoService;
 import com.github.cliftonlabs.json_simple.JsonObject;
@@ -7,13 +8,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200/")
+/*@CrossOrigin(origins = "http://localhost:4200/")*/
+@CrossOrigin(origins = "*")
 public class ProductoController {
 
     @Autowired
     ProductoService productoService;
+
+    @Autowired
+    ProductosDao productosDao;
 
     @RequestMapping(value = "api/producto", method = RequestMethod.GET)
     public List<Producto> obtenerProductos() {

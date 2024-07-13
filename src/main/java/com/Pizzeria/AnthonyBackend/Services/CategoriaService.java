@@ -32,4 +32,16 @@ public class CategoriaService {
         categoriaRepository.save(categoriaProducto);
         return mensaje;
     }
+
+    public void actualizarCategoria (CategoriaProducto categoriaProducto) {
+        categoriaRepository.save(categoriaProducto);
+    }
+
+    public void borrarCategoria (int id) {
+        categoriaRepository.deleteById(id);
+    }
+
+    public CategoriaProducto buscarCategoria (int id) {
+        return categoriaRepository.findById(id).get();
+    }
 }

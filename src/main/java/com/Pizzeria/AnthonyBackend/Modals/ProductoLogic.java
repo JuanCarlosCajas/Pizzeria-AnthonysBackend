@@ -1,20 +1,21 @@
 package com.Pizzeria.AnthonyBackend.Modals;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Entity
-@Table(name = "producto")
-public class Producto implements Serializable {
+@Table(name="producto")
+public class ProductoLogic implements Serializable {
 
     @Id
-    @Column(name= "id_producto")
+    @Column(name = "id_producto")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_producto;
 
@@ -33,8 +34,6 @@ public class Producto implements Serializable {
     @Column(name= "stock")
     private int stock;
 
-    @ManyToOne
-    @JsonIgnore
-    @JoinColumn(name = "id_categoria")
-    private CategoriaProducto categoriaProducto;
+    @Column(name = "id_categoria")
+    private int id_categoria;
 }

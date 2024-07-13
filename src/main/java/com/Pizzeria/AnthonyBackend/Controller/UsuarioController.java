@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200/")
+/*@CrossOrigin(origins = "http://localhost:4200/")*/
+@CrossOrigin(origins = "*")
 public class UsuarioController {
 
     @Autowired
@@ -22,6 +23,7 @@ public class UsuarioController {
     public Usuario loginUsuario(@RequestBody Usuario usuario){
         return usuarioDao.loginUsuario(usuario);
     }
+
     @RequestMapping(value = "api/usuarios", method = RequestMethod.GET)
     public List<Usuario> mostrarUsuarios(){
         return usuarioService.obtenerUsuarios();
