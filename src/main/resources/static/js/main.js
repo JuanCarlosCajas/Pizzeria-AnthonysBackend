@@ -4,10 +4,6 @@ fetch("http://localhost:8080/api/contador/usuario")
     .then(data => console.log(data))
 
 $(document).ready(function(){
-
-    /* Fetchs usuarios */
-
-	/*  Show/Hidden Submenus */
 	$('.nav-btn-submenu').on('click', function(e){
 		e.preventDefault();
 		var SubMenu=$(this).next('ul');
@@ -23,7 +19,6 @@ $(document).ready(function(){
 		}
 	});
 
-	/*  Show/Hidden Nav Lateral */
 	$('.show-nav-lateral').on('click', function(e){
 		e.preventDefault();
 		var NavLateral=$('.nav-lateral');
@@ -37,18 +32,16 @@ $(document).ready(function(){
 		}
 	});
 
-	/*  Exit system buttom */
 	$('.btn-exit-system').on('click', function(e){
 		e.preventDefault();
 		Swal.fire({
-			title: 'Are you sure to close the session?',
-			text: "You are about to close the session and exit the system",
+			title: 'Seguro(a) que deseas cerrar la sesion?',
 			type: 'question',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
 			cancelButtonColor: '#d33',
-			confirmButtonText: 'Yes, exit!',
-			cancelButtonText: 'No, cancel'
+			confirmButtonText: 'Si',
+			cancelButtonText: 'No'
 		}).then((result) => {
 
 		});
