@@ -53,7 +53,6 @@
 							<a href="home.html"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 
-
 						<li>
 							<a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Productos <i class="fas fa-chevron-down"></i></a>
 							<ul>
@@ -83,7 +82,62 @@
 								</li>
 							</ul>
 						</li>
-
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Pedidos <i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="pedido-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Pedidos</a>
+								</li>
+								<li>
+									<a href="pedido-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Pedidos</a>
+								</li>
+								<li>
+									<a href="pedido-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Pedidos</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Categoria Productos <i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="categoria-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Categoria Pedidos</a>
+								</li>
+								<li>
+									<a href="categoria-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Categorias Pedidos</a>
+								</li>
+								<li>
+									<a href="categoria-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Categorias Pedidos</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Empleados <i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="empleado-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Empleados</a>
+								</li>
+								<li>
+									<a href="empleado-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Empleados</a>
+								</li>
+								<li>
+									<a href="item-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Empleados</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Metodos de Pago<i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="metodoPago-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Metodos de Pago</a>
+								</li>
+								<li>
+									<a href="metodoPago-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Metodos de Pago</a>
+								</li>
+								<li>
+									<a href="metodoPago-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Metodos de Pago</a>
+								</li>
+							</ul>
+						</li>
 					</ul>
 				</nav>
 			</div>
@@ -131,24 +185,28 @@
 						<legend><i class="far fa-address-card"></i> &nbsp; Información personal</legend>
 						<div class="container-fluid">
 							<div class="row">
-								
-								<div class="col-12 col-md-6">
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="new_id_usuario" class="bmd-label-floating">ID Usuario</label>
+										<input type="text" pattern="[0-9()+]{1,20}" class="form-control" name="new_id_usuario" id="new_id_usuario" maxlength="9">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
 									<div class="form-group">
 										<label for="usuario_nombre" class="bmd-label-floating">Nombres</label>
 										<input type="text" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,35}" class="form-control" name="usuario_nombre" id="usuario_nombre" maxlength="35">
 									</div>
 								</div>
-
-								<div class="col-12 col-md-6">
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="usuario_apellido" class="bmd-label-floating">Apellidos</label>
+										<input type="text" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,35}" class="form-control" name="usuario_apellido" id="usuario_apellido" maxlength="35">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
 									<div class="form-group">
 										<label for="usuario_telefono" class="bmd-label-floating">Teléfono</label>
 										<input type="text" pattern="[0-9()+]{1,20}" class="form-control" name="usuario_telefono" id="usuario_telefono" maxlength="20">
-									</div>
-								</div>
-								<div class="col-12 col-md-6">
-									<div class="form-group">
-										<label for="usuario_direccion" class="bmd-label-floating">Dirección</label>
-										<input type="text" pattern="[a-zA-Z0-99áéíóúÁÉÍÓÚñÑ()# ]{1,190}" class="form-control" name="usuario_direccion" id="usuario_direccion" maxlength="190">
 									</div>
 								</div>
 							</div>

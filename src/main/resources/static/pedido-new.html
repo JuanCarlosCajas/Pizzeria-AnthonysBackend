@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Home</title>
+    <title>Nuevo Pedido</title>
 
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
@@ -160,61 +160,87 @@
         <!-- Page header -->
         <div class="full-box page-header">
             <h3 class="text-left">
-                <i class="fab fa-dashcube fa-fw"></i> &nbsp; DASHBOARD
+                <i class="fas fa-plus fa-fw"></i> &nbsp; NUEVO PEDIDO
             </h3>
         </div>
 
+        <div class="container-fluid">
+            <ul class="full-box list-unstyled page-nav-tabs">
+                <li>
+                    <a class="active" href="pedido-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; NUEVO PEDIDO</a>
+                </li>
+                <li>
+                    <a href="pedido-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE PEDIDOS</a>
+                </li>
+                <li>
+                    <a href="pedido-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR PEDIDO</a>
+                </li>
+            </ul>
+        </div>
+
         <!-- Content -->
-        <div class="full-box tile-container">
-
-            <a href="item-list.html" class="tile">
-                <div class="tile-tittle">Productos</div>
-                <div class="tile-icon">
-                    <i class="fas fa-pallet fa-fw"></i>
-                    <p class="contadorProducto"></p>
-                    <p class="contadorProducto"></p>
-                </div>
-            </a>
-
-            <a href="user-list.html" class="tile">
-                <div class="tile-tittle">Usuarios</div>
-                <div class="tile-icon">
-                    <i class="fas fa-user-secret fa-fw"></i>
-                    <p class="contadorUsuarios"></p>
-                </div>
-            </a>
-
-            <a href="pedido-list.html" class="tile">
-                <div class="tile-tittle">Pedidos</div>
-                <div class="tile-icon">
-                    <i class="fas fa-shopping-bag"></i>
-                    <p class="contadorPedidos"></p>
-                </div>
-            </a>
-
-            <a href="categoria-list.html" class="tile">
-                <div class="tile-tittle">Categorias producto</div>
-                <div class="tile-icon">
-                    <i class="fas fa-sliders-h"></i>
-                    <p class="contadorCategorias"></p>
-                </div>
-            </a>
-
-            <a href="empleado-list.html" class="tile">
-                <div class="tile-tittle">Empleados</div>
-                <div class="tile-icon">
-                    <i class="fas fa-users"></i>
-                    <p class="contadorEmpleados"></p>
-                </div>
-            </a>
-
-            <a href="metodoPago-list.html" class="tile">
-                <div class="tile-tittle">Metodos de Pago</div>
-                <div class="tile-icon">
-                    <i class="fas fa-credit-card"></i>
-                    <p class="contadorMetodos"></p>
-                </div>
-            </a>
+        <div class="container-fluid">
+            <form action="" class="form-neon" autocomplete="off">
+                <fieldset>
+                    <legend><i class="far fa-address-card"></i> &nbsp; Datos Pedido</legend>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="new_id_pedido" class="bmd-label-floating">ID Pedido</label>
+                                    <input type="text" pattern="[0-9()+]{1,20}" class="form-control" name="new_id_pedido" id="new_id_pedido" maxlength="9">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="new_id_usuario" class="bmd-label-floating">ID Usuario</label>
+                                    <input type="text" pattern="[0-9()+]{1,20}" class="form-control" name="new_id_usuario" id="new_id_usuario" maxlength="9">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="new_id_metodo" class="bmd-label-floating">ID Metodo de Pago</label>
+                                    <input type="text" pattern="[0-9()+]{1,20}" class="form-control" name="new_id_metodo" id="new_id_metodo" maxlength="9">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="new_fecha">fecha</label>
+                                    <input type="date" class="form-control" name="new_fecha" id="new_fecha">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="new_total" class="bmd-label-floating">Precio</label>
+                                    <input type="num" step="0.01" class="form-control" name="new_total" id="new_total" maxlength="9">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="pedido_descripcion" class="bmd-label-floating">Direccion</label>
+                                    <input type="text" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,190}" class="form-control" name="pedido_descripcion" id="pedido_descripcion" maxlength="35">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="new_categoria" class="bmd-label-floating">Estado</label>
+                                    <select class="form-control" name="new_categoria" id="new_categoria">
+                                        <option value="habilitado" selected="" disabled="">Seleccione una opción</option>
+                                        <option value="Deshabilitado">En proceso</option>
+                                        <option value="Deshabilitado">Procesp terminado</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <br><br><br>
+                <p class="text-center" style="margin-top: 40px;">
+                    <button type="reset" class="btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller"></i> &nbsp; LIMPIAR</button>
+                    &nbsp; &nbsp;
+                    <button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
+                </p>
+            </form>
         </div>
 
 
@@ -227,8 +253,6 @@
 ==============================================-->
 <!-- jQuery V3.4.1 -->
 <script src="./js/jquery-3.4.1.min.js" ></script>
-
-<script src="./js/home.js"></script>
 
 <!-- popper -->
 <script src="./js/popper.min.js" ></script>

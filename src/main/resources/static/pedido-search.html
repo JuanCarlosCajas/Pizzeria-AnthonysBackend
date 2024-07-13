@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Home</title>
+    <title>Buscar item</title>
 
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="./css/sweetalert2.min.css">
 
     <!-- Sweet Alert V8.13.0 JS file-->
-    <script src="./js/sweetalert2.min.js" ></script>
+    <script src="./js/sweetalert2.min.js"></script>
 
     <!-- jQuery Custom Content Scroller V3.1.5 -->
     <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css">
@@ -31,8 +31,9 @@
 
 
 </head>
-<body>
 
+
+<body>
 <!-- Main container -->
 <main class="full-box main-container">
     <!-- Nav lateral -->
@@ -142,8 +143,6 @@
             </nav>
         </div>
     </section>
-
-    <!-- Page content -->
     <section class="full-box page-content">
         <nav class="full-box navbar-info">
             <a href="#" class="float-left show-nav-lateral">
@@ -156,69 +155,116 @@
                 <i class="fas fa-power-off"></i>
             </a>
         </nav>
-
         <!-- Page header -->
         <div class="full-box page-header">
             <h3 class="text-left">
-                <i class="fab fa-dashcube fa-fw"></i> &nbsp; DASHBOARD
+                <i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR PEDIDO
             </h3>
         </div>
+        <div class="container-fluid">
+            <ul class="full-box list-unstyled page-nav-tabs">
+                <li>
+                    <a href="pedido-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR PEDIDO</a>
+                </li>
+                <li>
+                    <a href="pedido-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE PEDIDO</a>
+                </li>
+                <li>
+                    <a class="active" href="pedido-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR PEDIDO</a>
+                </li>
+            </ul>
+        </div>
 
-        <!-- Content -->
-        <div class="full-box tile-container">
-
-            <a href="item-list.html" class="tile">
-                <div class="tile-tittle">Productos</div>
-                <div class="tile-icon">
-                    <i class="fas fa-pallet fa-fw"></i>
-                    <p class="contadorProducto"></p>
-                    <p class="contadorProducto"></p>
+        <!--CONTENT-->
+        <div class="container-fluid">
+            <form class="form-neon" action="">
+                <div class="container-fluid">
+                    <div class="row justify-content-md-center">
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label for="inputSearch" class="bmd-label-floating">¿Qué pedido estas buscando?</label>
+                                <input type="text" class="form-control" name="busqueda-" id="inputSearch" maxlength="30">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <p class="text-center" style="margin-top: 40px;">
+                                <button type="submit" class="btn btn-raised btn-info"><i class="fas fa-search"></i> &nbsp; BUSCAR</button>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </a>
-
-            <a href="user-list.html" class="tile">
-                <div class="tile-tittle">Usuarios</div>
-                <div class="tile-icon">
-                    <i class="fas fa-user-secret fa-fw"></i>
-                    <p class="contadorUsuarios"></p>
-                </div>
-            </a>
-
-            <a href="pedido-list.html" class="tile">
-                <div class="tile-tittle">Pedidos</div>
-                <div class="tile-icon">
-                    <i class="fas fa-shopping-bag"></i>
-                    <p class="contadorPedidos"></p>
-                </div>
-            </a>
-
-            <a href="categoria-list.html" class="tile">
-                <div class="tile-tittle">Categorias producto</div>
-                <div class="tile-icon">
-                    <i class="fas fa-sliders-h"></i>
-                    <p class="contadorCategorias"></p>
-                </div>
-            </a>
-
-            <a href="empleado-list.html" class="tile">
-                <div class="tile-tittle">Empleados</div>
-                <div class="tile-icon">
-                    <i class="fas fa-users"></i>
-                    <p class="contadorEmpleados"></p>
-                </div>
-            </a>
-
-            <a href="metodoPago-list.html" class="tile">
-                <div class="tile-tittle">Metodos de Pago</div>
-                <div class="tile-icon">
-                    <i class="fas fa-credit-card"></i>
-                    <p class="contadorMetodos"></p>
-                </div>
-            </a>
+            </form>
         </div>
 
 
+        <div class="container-fluid">
+            <form action="">
+                <input type="hidden" name="eliminar-busqueda" value="eliminar">
+                <div class="container-fluid">
+                    <div class="row justify-content-md-center">
+                        <div class="col-12 col-md-6">
+                            <p class="text-center" style="font-size: 20px;">
+                                Resultados de la busqueda <strong>“Buscar”</strong>
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <p class="text-center" style="margin-top: 20px;">
+                                <button type="submit" class="btn btn-raised btn-danger"><i class="far fa-trash-alt"></i> &nbsp; ELIMINAR BÚSQUEDA</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="table-responsive">
+                <table class="table table-dark table-sm">
+                    <thead>
+                    <tr class="text-center roboto-medium">
+                        <th>#</th>
+                        <th>Id Pedido</th>
+                        <th>ID Usuario</th>
+                        <th>Id Metodo</th>
+                        <th>Fecha Pedido</th>
+                        <th>Total</th>
+                        <th>Direccion</th>
+                        <th>Estados</th>
+                        <th>Actualizar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="text-center" >
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>150</td>
+                        <td>hoy</td>
+                        <td>Mi casa</td>
+                        <td>en proceso</td>
+                        <td>
+                            <a href="pedido-update.html" class="btn btn-success">
+                                <i class="fas fa-sync-alt"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <form action="">
+                                <button type="button" class="btn btn-warning">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </section>
+
+
 </main>
 
 
@@ -227,8 +273,6 @@
 ==============================================-->
 <!-- jQuery V3.4.1 -->
 <script src="./js/jquery-3.4.1.min.js" ></script>
-
-<script src="./js/home.js"></script>
 
 <!-- popper -->
 <script src="./js/popper.min.js" ></script>

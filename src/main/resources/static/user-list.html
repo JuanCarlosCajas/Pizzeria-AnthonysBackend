@@ -68,7 +68,6 @@
 							</ul>
 						</li>
 
-
 						<li>
 							<a href="#" class="nav-btn-submenu"><i class="fas  fa-user-secret fa-fw"></i> &nbsp; Usuarios <i class="fas fa-chevron-down"></i></a>
 							<ul>
@@ -83,7 +82,62 @@
 								</li>
 							</ul>
 						</li>
-
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Pedidos <i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="pedido-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Pedidos</a>
+								</li>
+								<li>
+									<a href="pedido-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Pedidos</a>
+								</li>
+								<li>
+									<a href="pedido-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Pedidos</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Categoria Productos <i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="categoria-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Categoria Pedidos</a>
+								</li>
+								<li>
+									<a href="categoria-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Categorias Pedidos</a>
+								</li>
+								<li>
+									<a href="categoria-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Categorias Pedidos</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Empleados <i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="empleado-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Empleados</a>
+								</li>
+								<li>
+									<a href="empleado-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Empleados</a>
+								</li>
+								<li>
+									<a href="item-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Empleados</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Metodos de Pago<i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="metodoPago-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Metodos de Pago</a>
+								</li>
+								<li>
+									<a href="metodoPago-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Metodos de Pago</a>
+								</li>
+								<li>
+									<a href="metodoPago-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Metodos de Pago</a>
+								</li>
+							</ul>
+						</li>
 					</ul>
 				</nav>
 			</div>
@@ -131,9 +185,12 @@
 						<thead>
 							<tr class="text-center roboto-medium">
 								<th>#</th>
-								<th>NOMBRE</th>
-								<th>TELÉFONO</th>
+								<th>ID USUARIO</th>
+								<th>NOMBRES</th>
+								<th>APELLIDOS</th>
+								<th>TELEFONO</th>
 								<th>CORREO</th>
+								<th>CONTRASEÑA</th>
 								<th>ACTUALIZAR</th>
 								<th>ELIMINAR</th>
 							</tr>
@@ -141,63 +198,12 @@
 						<tbody>
 							<tr class="text-center" >
 								<td>1</td>
-								<th>NOMBRE DE USUARIO</th>
-								<th>2345456</th>
-								<th>ADMIN@ADMIN.COM</th>
-								<td>
-									<a href="user-update.html" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>	
-									</a>
-								</td>
-								<td>
-									<form action="">
-										<button type="button" class="btn btn-warning">
-		  									<i class="far fa-trash-alt"></i>
-										</button>
-									</form>
-								</td>
-							</tr>
-							<tr class="text-center" >
-								<td>2</td>
-								<th>NOMBRE DE USUARIO</th>
-								<th>2345456</th>
-								<th>ADMIN@ADMIN.COM</th>
-								<td>
-									<a href="user-update.html" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>	
-									</a>
-								</td>
-								<td>
-									<form action="">
-										<button type="button" class="btn btn-warning">
-		  									<i class="far fa-trash-alt"></i>
-										</button>
-									</form>
-								</td>
-							</tr>
-							<tr class="text-center" >
-								<td>3</td>
-								<th>NOMBRE DE USUARIO</th>
-								<th>2345456</th>
-								<th>ADMIN@ADMIN.COM</th>
-								<td>
-									<a href="user-update.html" class="btn btn-success">
-	  									<i class="fas fa-sync-alt"></i>	
-									</a>
-								</td>
-								<td>
-									<form action="">
-										<button type="button" class="btn btn-warning">
-		  									<i class="far fa-trash-alt"></i>
-										</button>
-									</form>
-								</td>
-							</tr>
-							<tr class="text-center" >
-								<td>4</td>
-								<th>NOMBRE DE USUARIO</th>
-								<th>2345456</th>
-								<th>ADMIN@ADMIN.COM</th>
+								<th>152</th>
+								<th>LEANDRO</th>
+								<th>GARCIA</th>
+								<th>934381133</th>
+								<th>LEAN@GMAIL.COM</th>
+								<th>123456</th>
 								<td>
 									<a href="user-update.html" class="btn btn-success">
 	  									<i class="fas fa-sync-alt"></i>	
@@ -214,19 +220,7 @@
 						</tbody>
 					</table>
 				</div>
-				<nav aria-label="Page navigation example">
-					<ul class="pagination justify-content-center">
-						<li class="page-item disabled">
-							<a class="page-link" href="#" tabindex="-1">Previous</a>
-						</li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item">
-							<a class="page-link" href="#">Next</a>
-						</li>
-					</ul>
-				</nav>
+
 			</div>
 
 		</section>

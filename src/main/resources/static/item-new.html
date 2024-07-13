@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Nuevo item</title>
+    <title>Nuevo Producto</title>
 
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
@@ -69,7 +69,6 @@
                             </ul>
                         </li>
 
-
                         <li>
                             <a href="#" class="nav-btn-submenu"><i class="fas  fa-user-secret fa-fw"></i> &nbsp; Usuarios <i class="fas fa-chevron-down"></i></a>
                             <ul>
@@ -84,7 +83,62 @@
                                 </li>
                             </ul>
                         </li>
-
+                        <li>
+                            <a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Pedidos <i class="fas fa-chevron-down"></i></a>
+                            <ul>
+                                <li>
+                                    <a href="pedido-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Pedidos</a>
+                                </li>
+                                <li>
+                                    <a href="pedido-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Pedidos</a>
+                                </li>
+                                <li>
+                                    <a href="pedido-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Pedidos</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Categoria Productos <i class="fas fa-chevron-down"></i></a>
+                            <ul>
+                                <li>
+                                    <a href="categoria-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Categoria Pedidos</a>
+                                </li>
+                                <li>
+                                    <a href="categoria-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Categorias Pedidos</a>
+                                </li>
+                                <li>
+                                    <a href="categoria-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Categorias Pedidos</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Empleados <i class="fas fa-chevron-down"></i></a>
+                            <ul>
+                                <li>
+                                    <a href="empleado-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Empleados</a>
+                                </li>
+                                <li>
+                                    <a href="empleado-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Empleados</a>
+                                </li>
+                                <li>
+                                    <a href="item-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Empleados</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Metodos de Pago<i class="fas fa-chevron-down"></i></a>
+                            <ul>
+                                <li>
+                                    <a href="metodoPago-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Metodos de Pago</a>
+                                </li>
+                                <li>
+                                    <a href="metodoPago-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Metodos de Pago</a>
+                                </li>
+                                <li>
+                                    <a href="metodoPago-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar Metodos de Pago</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -125,12 +179,12 @@
             <div class="container-fluid">
 				<form action="" class="form-neon" autocomplete="off">
 					<fieldset>
-						<legend><i class="far fa-plus-square"></i> &nbsp; Información del item</legend>
+						<legend><i class="far fa-plus-square"></i> &nbsp; Datos del producto</legend>
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-12 col-md-4">
 									<div class="form-group">
-										<label for="item_codigo" class="bmd-label-floating">Códido</label>
+										<label for="item_codigo" class="bmd-label-floating">ID Producto</label>
 										<input type="text" pattern="[a-zA-Z0-9-]{1,45}" class="form-control" name="item_codigo" id="item_codigo" maxlength="45">
 									</div>
 								</div>
@@ -141,32 +195,39 @@
 										<input type="text" pattern="[a-zA-záéíóúÁÉÍÓÚñÑ0-9 ]{1,140}" class="form-control" name="item_nombre" id="item_nombre" maxlength="140">
 									</div>
 								</div>
-								<div class="col-12 col-md-4">
-									<div class="form-group">
-										<label for="item_stock" class="bmd-label-floating">Stock</label>
-										<input type="num" pattern="[0-9]{1,9}" class="form-control" name="item_stock" id="item_stock" maxlength="9">
-									</div>
-								</div>
-								<div class="col-12 col-md-4">
-									<div class="form-group">
-										<label for="item_estado" class="bmd-label-floating">Estado</label>
-										<select class="form-control" name="item_estado" id="item_estado">
-											<option value="" selected="" disabled="">Seleccione una opción</option>
-											<option selected="" value="Habilitado">Habilitado</option>
-											<option value="Deshabilitado">Deshabilitado</option>
-										</select>
-									</div>
-								</div>
+                                <div class="col-12 col-md-4">
+                                    <div class="form-group">
+                                        <label for="item_url" class="bmd-label-floating">URL</label>
+                                        <input type="url" class="form-control" name="item_url" id="item_url" maxlength="2048">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="form-group">
+                                        <label for="item_descripcion" class="bmd-label-floating">Detalle</label>
+                                        <input type="text" pattern="[a-zA-záéíóúÁÉÍÓÚñÑ0-9()- ]{1,190}" class="form-control" name="item_descripcion" id="item_descripcion" maxlength="190">
+                                    </div>
+                                </div>
                                 <div class="col-12 col-md-4">
                                     <div class="form-group">
                                         <label for="item_precio" class="bmd-label-floating">Precio</label>
                                         <input type="num" step="0.01" class="form-control" name="item_precio" id="item_precio" maxlength="9">
                                     </div>
                                 </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="form-group">
+                                        <label for="item_stock" class="bmd-label-floating">Stock</label>
+                                        <input type="num" pattern="[0-9]{1,9}" class="form-control" name="item_stock" id="item_stock" maxlength="9">
+                                    </div>
+                                </div>
 								<div class="col-12 col-md-4">
 									<div class="form-group">
-										<label for="item_detalle" class="bmd-label-floating">Detalle</label>
-										<input type="text" pattern="[a-zA-záéíóúÁÉÍÓÚñÑ0-9()- ]{1,190}" class="form-control" name="item_detalle" id="item_detalle" maxlength="190">
+										<label for="item_categoria" class="bmd-label-floating">Categoria</label>
+										<select class="form-control" name="item_categoria" id="item_categoria">
+											<option value="habilitado" selected="" disabled="">Seleccione una opción</option>
+											<option value="Deshabilitado">Pizza</option>
+											<option value="Deshabilitado">Pastas</option>
+                                            <option value="Deshabilitado">Complemento</option>
+										</select>
 									</div>
 								</div>
 							</div>
@@ -181,10 +242,6 @@
 				</form>
 			</div>
         </section>
-
-
-
-
     </main>
     
     	
