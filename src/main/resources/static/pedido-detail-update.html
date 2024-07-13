@@ -148,20 +148,23 @@
 
         <div class="full-box page-header">
             <h3 class="text-left">
-                <i class="fas fa-sync-alt fa-fw"></i> &nbsp; ACTUALIZAR CATEGORIA
+                <i class="fas fa-sync-alt fa-fw"></i> &nbsp; ACTUALIZAR DETALLE PEDIDO
             </h3>
         </div>
 
         <div class="container-fluid">
             <ul class="full-box list-unstyled page-nav-tabs">
                 <li>
-                    <a href="categoria-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR CATEGORIA</a>
+                    <a href="pedido-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR PEDIDOS</a>
                 </li>
                 <li>
-                    <a href="categoria-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE CATEGORIAS</a>
+                    <a href="pedido-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE PEDIDOS</a>
                 </li>
                 <li>
-                    <a href="categoria-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR CATEGORIA</a>
+                    <a href="pedido-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; DETALLE DE PEDIDOS</a>
+                </li>
+                <li>
+                    <a href="pedido-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR PEDIDOS</a>
                 </li>
             </ul>
         </div>
@@ -169,34 +172,66 @@
         <div class="container-fluid">
             <form action="" class="form-neon" autocomplete="off">
                 <fieldset>
-                    <legend><i class="far fa-address-card"></i> &nbsp; Información personal</legend>
+                    <legend><i class="far fa-address-card"></i> &nbsp; Datos Pedido</legend>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12 col-md-4">
                                 <div class="form-group">
-                                    <label for="update_id_categoria" class="bmd-label-floating">ID Categoria</label>
-                                    <input type="text" pattern="[0-9()+]{1,20}" class="form-control" name="update_id_categoria" id="update_id_categoria" maxlength="9">
+                                    <label for="update_id_pedido" class="bmd-label-floating">ID Pedido</label>
+                                    <input type="text" pattern="[0-9()+]{1,20}" class="form-control" name="update_id_pedido" id="update_id_pedido" maxlength="9">
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <div class="form-group">
-                                    <label for="update_ncategoria" class="bmd-label-floating">Nombre</label>
-                                    <select class="form-control" name="update_ncategoria" id="update_ncategoria">
+                                    <label for="update_id_usuario" class="bmd-label-floating">ID Usuario</label>
+                                    <input type="text" pattern="[0-9()+]{1,20}" class="form-control" name="update_id_usuario" id="update_id_usuario" maxlength="9">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="update_id_metodo" class="bmd-label-floating">ID Metodo de Pago</label>
+                                    <input type="text" pattern="[0-9()+]{1,20}" class="form-control" name="update_id_metodo" id="update_id_metodo" maxlength="9">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="update_fecha">fecha</label>
+                                    <input type="date" class="form-control" name="update_fecha" id="update_fecha">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="update_total" class="bmd-label-floating">Precio</label>
+                                    <input type="num" step="0.01" class="form-control" name="update_total" id="update_total" maxlength="9">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="pedido_descripcion" class="bmd-label-floating">Direccion</label>
+                                    <input type="text" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,190}" class="form-control" name="pedido_descripcion" id="pedido_descripcion" maxlength="35">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="form-group">
+                                    <label for="update_categoria" class="bmd-label-floating">Estado</label>
+                                    <select class="form-control" name="update_categoria" id="update_categoria">
                                         <option value="habilitado" selected="" disabled="">Seleccione una opción</option>
-                                        <option value="Deshabilitado">Pizza</option>
-                                        <option value="Deshabilitado">Pasta</option>
-                                        <option value="Deshabilitado">Complementos</option>
+                                        <option value="Deshabilitado">En proceso</option>
+                                        <option value="Deshabilitado">Procesp terminado</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </fieldset>
+                <br><br><br>
                 <p class="text-center" style="margin-top: 40px;">
                     <button type="submit" class="btn btn-raised btn-success btn-sm"><i class="fas fa-sync-alt"></i> &nbsp; ACTUALIZAR</button>
                 </p>
-                </fieldset>
             </form>
         </div>
+
+
     </section>
 </main>
 
